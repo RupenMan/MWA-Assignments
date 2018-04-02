@@ -1,0 +1,29 @@
+<!-- 
+    Written on April 2, 2019
+    BMI Calculator
+    @author Rupendra Maharjan
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>BMI Calculator</title>
+     <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+              crossorigin="anonymous"></script>
+    <script src="bmiCalculator.js" type="text/javascript"></script>
+ </head>
+
+ <body>
+     <h3>BMI Calculator</h3>
+     <label><input type="radio" name="unit" value="english">English</label>
+     <input type="number" name="height" placeholder="Enter your height in cm">
+     <input type="number" name="weight" placeholder="Enter your weight in kg">
+     <button id="calculate">Calculate</button>
+     <div id="output"></div>
+ </body>
+ </html>
