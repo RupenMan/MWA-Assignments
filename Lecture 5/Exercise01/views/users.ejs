@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Information</title>
+    <link rel='stylesheet' href='/stylesheets/userStyle.css' />
+</head>
+
+<body>
+    <table>
+        <thead>
+            <td>id</td>
+            <td>Name</td>
+            <td>Username</td>
+            <td>Email</td>
+            <td>City</td>
+            <td>ZipCode</td>
+            <td>Latitude</td>
+            <td>Longitude</td>
+            <td>Website</td>
+        </thead>
+
+        <tbody>
+            <%for(var i=0; i< datum.length; ++i){ %>
+                <tr>
+                    <td><%= datum[i].id %></td>
+                    <td><%= datum[i].name %></td>            
+                    <td><%= datum[i].username %></td>            
+                    <td><%= datum[i].email %></td>            
+                    <td><%= datum[i].address.city %></td>                        
+                    <td><%= datum[i].address.zipcode %></td>            
+                    <td><%= datum[i].address.geo.lat %></td>            
+                    <td><%= datum[i].address.geo.lng %></td>            
+                    <td><%= datum[i].website %></td>            
+                </tr>
+            <%}%>
+        </tbody>
+    </table>
+</body>
+
+</html>
