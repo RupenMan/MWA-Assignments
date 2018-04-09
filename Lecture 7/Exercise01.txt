@@ -1,0 +1,19 @@
+/**
+* Commands to create database in MongoDB
+* Database: library
+* Collection: book
+*
+*/
+use library;
+
+db.books.insert({
+	isbn:"ISBN 0-205-00065-7", 
+	title: "The Allyn and Bacon Guide to Writing", 
+	edition: "Sixth Edition", 
+	author: ["John D. Ramage", "John C. Bean", "June Johnson"], 		keywords:["Ramage", "Bean","Johnson", "Allyn and Bacon"], 		borrowed:true, 
+	borrower:{
+		name:"Rupendra Maharjan", 
+		entry:"October, 2017"
+	}, 
+	returnDate: new Date('2018-04-12)
+}); 
