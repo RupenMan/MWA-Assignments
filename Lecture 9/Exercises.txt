@@ -25,8 +25,9 @@ Solution to Questions:
 --------------------------------------------------------------------------------------------------------------------------------------
 
 4. db.zips.aggregate([
+	{$group:{_id:{city:"$city",state:"$state"},pop:{$sum:"$pop"}}},
 	{$sort:{pop:1}},
-	{$group:{_id:{state:"$state"},city:{$first:"$city"},pop:{$first:"$pop"}}},
+	{$group:{_id:{state:"$_id.state"},city:{$first:"$_id.city"},pop:{$first:"$pop"}}},
 	{$sort:{pop:1}}
 ]);
 
