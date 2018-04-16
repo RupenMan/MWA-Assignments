@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Location</title>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4"></div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <form action="">
+                        <table>
+                            <tr>
+                                <td>Current Latitude:</td>
+                                <td><input type="text" id="myLatitude" disabled></td>
+                            </tr>
+                            <tr>
+                                <td>Current Longitude:</td>
+                                <td><input type="text" id="myLongitude" disabled></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <% for (var i=0; i<location.length;++i){ %>
+                        <%= location[i].name %><br />
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/currentLocation.js"></script>
+
+</html>
