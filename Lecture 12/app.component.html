@@ -1,0 +1,8 @@
+<input type="text" #initValue (keyup)="0">
+<br />
+<app-simple-counter [myValue] = "initValue.value" (counterChange) = "changedValue = $event">
+</app-simple-counter>
+<br>
+Component Counter Value: {{changedValue}}
+
+
