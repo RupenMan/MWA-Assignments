@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Insert String</title>
+</head>
+
+<body>
+  <input type="text" [(ngModel)]="newString">
+  <input type="button" value="Insert" (click)="onInsert()" /> Visibility:
+  <select name="myOption" [(ngModel)]="optionSelected">
+    <option value="true">True</option>
+    <option value="false">False</option>
+  </select>
+  <ul *ngFor="let myVal of arrayString; let i= index;">
+    <li *ngIf="myOption" ccUpper ccMyVisibility="visible" ccMyColor>
+      {{myVal}}
+    </li>
+    <li *ngIf="!myOption" ccUpper ccMyVisibility="hidden" ccMyColor>
+      {{myVal}}
+    </li>
+  </ul>
+</body>
+
+</html>
