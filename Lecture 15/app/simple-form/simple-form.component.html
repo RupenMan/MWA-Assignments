@@ -1,0 +1,50 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm" class="form-control">
+  <div [ngClass] ="{
+    'has-danger': username.invalid && (username.touched || username.dirty),
+    'has-success': username.valid && (username.touched || username.dirty)
+  }">
+    <label class="aria-label">Name</label>
+    <input type="text" name="name" [(ngModel)]="name" class="form-control"
+    required #username="ngModel">
+    <div class="form-control-feedback" 
+    *ngIf="username.errors && (username.touched || username.dirty)">
+      <p *ngIf="username.errors.required">Required</p>
+    </div>
+  </div>
+  
+  <div [ngClass] ="{
+    'has-danger': userEmail.invalid && (userEmail.touched || userEmail.dirty),
+    'has-success': userEmail.valid && (userEmail.touched || userEmail.dirty)
+  }">
+    <label class="aria-label">Email</label>
+    <input type="email" name="email" [(ngModel)]="email" class="form-control"
+    required #userEmail="ngModel">
+    <div class="form-control-feedback" 
+    *ngIf="userEmail.errors && (userEmail.touched || userEmail.dirty)">
+      <p *ngIf="userEmail.errors.required">Required</p>
+    </div>
+
+    <div [ngClass] ="{
+      'has-danger': userPost.invalid && (userPost.touched || userPost.dirty),
+      'has-success': userPost.valid && (userPost.touched || userPost.dirty)
+    }">
+      <label class="aria-label">Post</label>
+      <input type="text" name="post" [(ngModel)]="post" class="form-control"
+      required minlength="10" #userPost="ngModel">
+      <div class="form-control-feedback"
+      *ngIf="userPost.errors && (userPost.touched || userPost.dirty)">
+        <p *ngIf="userPost.errors.required">Required</p>
+        <p *ngIf="userPost.errors.minlength">Minimum Length 10</p>
+      </div>
+    </div>
+  </div>
+  <label>User ID</label>
+  <div>
+    <input type="text" name="userId" [(ngModel)]="userId" #userIdentity = 'ngModel'
+    class="form-control">
+  </div>
+  <div class="btns">
+    <input type="submit" value="Submit" class ="btn btn-primary" [disabled]="f.invalid">
+    <input type="button" value="GetData" (click)="getData(userIdentity.value)" class="btn btn-primary">
+  </div>
+</form>

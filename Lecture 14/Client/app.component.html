@@ -1,0 +1,9 @@
+  <h1>
+    {{ title }}
+  </h1>
+  <ul>
+    <li><a [routerLink] = "['homepage']" routerLinkActive = "active">Home</a></li>
+    <li><a [routerLink] = "['students']" routerLinkActive = "active">Students</a></li>
+  </ul>
+  <hr>
+<router-outlet></router-outlet>

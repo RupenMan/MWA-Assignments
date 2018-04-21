@@ -1,0 +1,24 @@
+h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+li{
+    display: inline-block;
+    border: 4px solid brown;
+    border-radius: 5px 5px 0 0;
+    background-color: brown; 
+}
+li > a{
+    text-decoration: none;
+    color: white;
+    outline: 0;
+}
+
+li > a.active{
+    color:lawngreen;
+}
+
+li > a.hover{
+    color:blue;
+}
